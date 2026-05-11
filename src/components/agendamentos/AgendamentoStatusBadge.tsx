@@ -1,12 +1,12 @@
 import { StatusBadge, StatusBadgeVariant } from "@/components/common/StatusBadge";
-import { RetornoStatus } from "@/types/retorno";
+import { AgendamentoStatus } from "@/types/agendamento";
 
-type RetornoStatusBadgeProps = {
-  status: RetornoStatus;
+type AgendamentoStatusBadgeProps = {
+  status: AgendamentoStatus;
 };
 
 const statusConfig: Record<
-  RetornoStatus,
+  AgendamentoStatus,
   {
     label: string;
     variant: StatusBadgeVariant;
@@ -16,25 +16,23 @@ const statusConfig: Record<
     label: "Pendente",
     variant: "warning",
   },
-  avisado: {
-    label: "Avisado",
+  confirmado: {
+    label: "Confirmado",
     variant: "info",
   },
-  agendado: {
-    label: "Agendado",
-    variant: "accent",
-  },
-  concluido: {
-    label: "Concluído",
+  realizado: {
+    label: "Realizado",
     variant: "success",
   },
-  atrasado: {
-    label: "Atrasado",
+  cancelado: {
+    label: "Cancelado",
     variant: "danger",
   },
 };
 
-export function RetornoStatusBadge({ status }: RetornoStatusBadgeProps) {
+export function AgendamentoStatusBadge({
+  status,
+}: AgendamentoStatusBadgeProps) {
   const config = statusConfig[status];
 
   return <StatusBadge label={config.label} variant={config.variant} />;

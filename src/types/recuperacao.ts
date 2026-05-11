@@ -1,10 +1,25 @@
-export type RecuperacaoStatus = "sem_resposta" | "interessada" | "aguardando" | "recuperada" | "perdida";
+export type RecuperacaoStatus =
+  | "sem_resposta"
+  | "aguardando_retorno"
+  | "interessada"
+  | "recuperada"
+  | "perdida";
 
-export type RecuperacaoCliente = {
+export type RecuperacaoOrigem =
+  | "pre_avaliacao"
+  | "agendamento_cancelado"
+  | "cliente_antiga"
+  | "orcamento_enviado"
+  | "pos_atendimento";
+
+export type Recuperacao = {
   id: string;
-  clienteId: string;
-  procedimentoInteresse?: string;
-  motivo: string;
+  clienteNome: string;
+  clienteWhatsapp: string;
+  procedimentoInteresse: string;
+  origem: RecuperacaoOrigem;
+  ultimaInteracao: string;
+  diasSemResposta: number;
   status: RecuperacaoStatus;
-  ultimaTentativaContato?: string;
+  observacoes?: string;
 };

@@ -1,15 +1,43 @@
+import { StatusBadge, StatusBadgeVariant } from "@/components/common/StatusBadge";
+import { RecuperacaoStatus } from "@/types/recuperacao";
+
 type RecuperacaoStatusBadgeProps = {
-  status: "sem_resposta" | "interessada" | "aguardando" | "recuperada" | "perdida";
+  status: RecuperacaoStatus;
 };
 
-const labels = {
-  sem_resposta: "Sem resposta",
-  interessada: "Interessada",
-  aguardando: "Aguardando",
-  recuperada: "Recuperada",
-  perdida: "Perdida",
+const statusConfig: Record<
+  RecuperacaoStatus,
+  {
+    label: string;
+    variant: StatusBadgeVariant;
+  }
+> = {
+  sem_resposta: {
+    label: "Sem resposta",
+    variant: "warning",
+  },
+  aguardando_retorno: {
+    label: "Aguardando retorno",
+    variant: "info",
+  },
+  interessada: {
+    label: "Interessada",
+    variant: "accent",
+  },
+  recuperada: {
+    label: "Recuperada",
+    variant: "success",
+  },
+  perdida: {
+    label: "Perdida",
+    variant: "neutral",
+  },
 };
 
-export function RecuperacaoStatusBadge({ status }: RecuperacaoStatusBadgeProps) {
-  return <span className="rounded-full bg-[#FAF7F2] px-3 py-1 text-xs font-medium text-[#8C6A5D]">{labels[status]}</span>;
+export function RecuperacaoStatusBadge({
+  status,
+}: RecuperacaoStatusBadgeProps) {
+  const config = statusConfig[status];
+
+  return <StatusBadge label={config.label} variant={config.variant} />;
 }

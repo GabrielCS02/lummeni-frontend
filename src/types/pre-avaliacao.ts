@@ -1,13 +1,19 @@
-export type PreAvaliacaoStatus = "nova" | "em_analise" | "aprovada" | "recusada" | "sem_resposta";
+export type PreAvaliacaoStatus =
+  | "nova"
+  | "em_analise"
+  | "aprovada"
+  | "recusada"
+  | "aguardando_resposta";
 
 export type PreAvaliacao = {
   id: string;
-  clienteId?: string;
-  nomeCliente: string;
-  whatsapp: string;
+  clienteNome: string;
+  clienteWhatsapp: string;
   procedimentoInteresse: string;
-  queixaObjetivo?: string;
+  objetivo: string;
+  possuiContraindicacao: boolean;
   contraindicacoes?: string;
-  observacoes?: string;
+  dataSolicitacao: string;
   status: PreAvaliacaoStatus;
+  observacoes?: string;
 };

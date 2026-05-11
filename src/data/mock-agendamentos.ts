@@ -1,0 +1,51 @@
+import { Agendamento } from "@/types/agendamento";
+
+export const mockAgendamentos: Agendamento[] = [
+  {
+    id: "1",
+    clienteNome: "Mariana Souza",
+    clienteWhatsapp: "5511999990001",
+    procedimentoNome: "Limpeza de pele",
+    data: "2026-05-12",
+    horario: "09:00",
+    status: "confirmado",
+    observacoes: "Cliente prefere atendimento pela manhã.",
+  },
+  {
+    id: "2",
+    clienteNome: "Camila Ferreira",
+    clienteWhatsapp: "5511999990002",
+    procedimentoNome: "Design de sobrancelhas",
+    data: "2026-05-12",
+    horario: "11:30",
+    status: "pendente",
+  },
+  {
+    id: "3",
+    clienteNome: "Juliana Lima",
+    clienteWhatsapp: "5511999990003",
+    procedimentoNome: "Peeling facial",
+    data: "2026-05-13",
+    horario: "14:00",
+    status: "confirmado",
+  },
+  {
+    id: "4",
+    clienteNome: "Renata Alves",
+    clienteWhatsapp: "5511999990004",
+    procedimentoNome: "Microagulhamento",
+    data: "2026-05-14",
+    horario: "16:30",
+    status: "cancelado",
+    observacoes: "Cliente pediu para remarcar.",
+  },
+  {
+    id: "5",
+    clienteNome: "Larissa Gomes",
+    clienteWhatsapp: "5511999990005",
+    procedimentoNome: "Limpeza de pele",
+    data: "2026-05-15",
+    horario: "10:00",
+    status: "realizado",
+  },
+];

@@ -1,14 +1,19 @@
 import { RetornoTable } from "@/components/retornos/RetornoTable";
+import { mockRetornos } from "@/data/mock-retornos";
 
 export default function RetornosPage() {
   return (
-    <div className="space-y-6">
+    <section className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold text-[#2E2E2E]">Retornos</h1>
-        <p className="mt-1 text-sm text-[#8C6A5D]">Acompanhe clientes que precisam retornar e envie lembretes pelo WhatsApp.</p>
+        <h1 className="text-2xl font-semibold text-slate-900">
+          Retornos
+        </h1>
+        <p className="mt-1 text-sm text-slate-500">
+          Acompanhe clientes com retorno previsto, atrasado ou já avisado.
+        </p>
       </div>
 
-      <RetornoTable />
-    </div>
+      <RetornoTable retornos={mockRetornos} />
+    </section>
   );
 }

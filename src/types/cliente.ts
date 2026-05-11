@@ -1,10 +1,17 @@
-export type ClienteStatus = "ativo" | "sem_resposta" | "inativo";
+export type ClienteStatus =
+  | "ativo"
+  | "sem_resposta"
+  | "em_acompanhamento"
+  | "inativo";
 
 export type Cliente = {
   id: string;
   nome: string;
   whatsapp: string;
-  observacao?: string;
+  email?: string;
+  procedimentoInteresse: string;
+  ultimoAtendimento?: string;
+  proximoRetorno?: string;
   status: ClienteStatus;
-  criadoEm: string;
+  observacoes?: string;
 };

@@ -1,9 +1,19 @@
+export type AtendimentoStatus =
+  | "realizado"
+  | "retorno_pendente"
+  | "retorno_agendado"
+  | "finalizado";
+
 export type Atendimento = {
   id: string;
-  clienteId: string;
-  procedimentoId: string;
+  clienteNome: string;
+  clienteWhatsapp: string;
+  procedimentoNome: string;
   dataAtendimento: string;
+  profissionalResponsavel?: string;
+  produtosUtilizados?: string;
   observacoes?: string;
-  dataPrevistaRetorno?: string;
   cuidadosEnviados: boolean;
+  dataPrevistaRetorno?: string;
+  status: AtendimentoStatus;
 };
